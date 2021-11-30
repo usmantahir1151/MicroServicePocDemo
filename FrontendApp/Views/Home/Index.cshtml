@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GlobalConfigurationVM>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+
+<div class="container">
+    <div class="display-4">All Configurations</div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">IsActive</th>
+                    <th scope="col">CreatedDate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.IsActive</td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

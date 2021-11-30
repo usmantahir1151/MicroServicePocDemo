@@ -1,0 +1,17 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Configuration/GetConfigurations",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "microserviceapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/GetConfigurations",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+
+  ]
+}

@@ -1,0 +1,42 @@
+version: '3.4'
+
+services:
+  microserviceapi:
+    image: utahir604/microserviceapi:i1
+    build:
+      context: .
+      dockerfile: MicroserviceAPI/Dockerfile
+    ports:
+      - "7080:80"
+      #- "8081:443"
+    environment:
+      DBServer: "sql_in_dc"
+      DBPort: "1433"
+      DBUser: "SA"
+      DBPassword: "TestP@ssw0rd"
+      Database: "DemoDB"
+
+  frontendapp:
+    image: utahir604/frontendapp:i2
+    build:
+      context: .
+      dockerfile: FrontendApp/Dockerfile
+    ports:
+      - "7081:80"
+
+  apigateway:
+    image: utahir604/apigateway:i3
+    build:
+      context: .
+      dockerfile: APIGateway/Dockerfile
+    ports:
+      - "7082:80"
+
+  sql_in_dc:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "TestP@ssw0rd"
+    ports:
+      - "1433:1433"
+

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  microserviceapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  frontendapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+
+  apigateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
