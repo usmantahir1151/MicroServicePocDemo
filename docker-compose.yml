@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   microserviceapi:
-    image: utahir604/microserviceapi:i1
+    image: utahir604/microserviceapi:latest
     build:
       context: .
       dockerfile: MicroserviceAPI/Dockerfile
@@ -19,7 +19,7 @@ services:
       Database: "DemoDB"
 
   frontendapp:
-    image: utahir604/frontendapp:i2
+    image: utahir604/frontendapp:latest
     build:
       context: .
       dockerfile: FrontendApp/Dockerfile
@@ -27,7 +27,7 @@ services:
       - "7081:80"
 
   apigateway:
-    image: utahir604/apigateway:i3
+    image: utahir604/apigateway:latest
     build:
       context: .
       dockerfile: APIGateway/Dockerfile
