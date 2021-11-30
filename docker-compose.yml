@@ -9,6 +9,8 @@ services:
     ports:
       - "7080:80"
       #- "8081:443"
+    depends_on:
+            - sql_in_dc
     environment:
       DBServer: "sql_in_dc"
       DBPort: "1433"
